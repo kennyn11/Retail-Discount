@@ -64,9 +64,6 @@ for (let item in products[0])
     console.log(`${item}: ${products[0][item]}`)
 
 // Log after inventory update //
-for (let product of products) {
-console.log(`\n${product.name}:`)
-    for (let [name, data] of Object.entries(product))
-        console.log(`${name}:${data}`)
-    console.log(`${product.name}: ${product.inventory} left`);
+for (let product of products)  {
+    console.log(`${product.name}: ${product.inventory} units remaining`);
 }
