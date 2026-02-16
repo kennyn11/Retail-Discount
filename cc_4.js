@@ -27,5 +27,16 @@ for (let product of products) {
     product.discountPrice = product.price * (1-discountRate)
 }
 // CustomerType Discount // 
-let customerType = "Student"
-function 
+let customerType = "student"
+function getCustomerDiscount(type) {
+    if (type == "student"){
+        return 0.05;
+} else if (type === "senior") {
+ return 0.07;
+} else {
+return 0;
+}
+}
+let certainDiscount = getCustomerDiscount(customerType)
+
+// Checkout Process //
