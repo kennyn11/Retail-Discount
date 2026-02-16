@@ -40,3 +40,19 @@ return 0;
 let certainDiscount = getCustomerDiscount(customerType)
 
 // Checkout Process //
+let customerCheckout = [
+[0,2], [2,4] , [1,3,2]
+
+];
+for (let i = 0; i <3; i++){
+    let customerTotal = i + 1;
+    let cartAmount = 0
+console.log (`Customer ${customerTotal}:`)
+
+for (let productIndex of customerCheckout[i]) {
+    let product = products[productIndex]
+    cartAmount += product.discountedPrice
+    --product.inventory;
+}
+let finalTotal = cartAmount * (1 - certainDiscount)
+}
