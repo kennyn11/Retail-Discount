@@ -15,7 +15,8 @@ for (let product of products) {
      case "apparel":
             discountRate = .15
             break;
-    case "grocery", "household":
+    case "grocery":
+    case "household":
         discountRate = .10
         break;
     case "electronics":
@@ -51,8 +52,21 @@ console.log (`Customer ${customerTotal}:`)
 
 for (let productIndex of customerCheckout[i]) {
     let product = products[productIndex]
-    cartAmount += product.discountedPrice
+    cartAmount += product.discountPrice
     --product.inventory;
 }
 let finalTotal = cartAmount * (1 - certainDiscount)
+console.log(`Total after student discount: $${finalTotal.toFixed(2)}`);
+}
+
+// Single product discounts // 
+for (let item in products[0])
+    console.log(`${item}: ${products[0][item]}`)
+
+// Log after inventory update //
+for (let product of products) {
+console.log(`\n${product.name}:`)
+    for (let [name, data] of Object.entries(product))
+        console.log(`${name}:${data}`)
+    console.log(`${product.name}: ${product.inventory} left`);
 }
